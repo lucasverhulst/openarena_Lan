@@ -1,0 +1,24 @@
+services:
+  openarena:
+    image: "sago007/openarena"
+    ports:
+      - "27960:27960/udp"
+    environment:
+      OA_STARTMAP: "oa_dm1"
+      OA_PORT: "27690"
+    volumes:
+      - ./gameConfig:/data/openarena/baseoa
+    restart: unless-stopped
+
+  samba:
+    image: "crazymax/samba:latest"
+    ports:
+      - "445:445/tcp"
+    environment:
+      TZ: "Europe/Amsterdam"
+      SAMBA_LOG_LEVEL: "0"
+      SAMBA_HOSTS_ALLOW: ""
+    volumes:
+      - ./sambaConfig:/data
+      - ./gameFiles:/samba/public
+    restart: unless-stopped

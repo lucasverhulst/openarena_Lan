@@ -1,0 +1,8 @@
+/gameConfig/games.log
+
+/sambaConfig/cache
+/sambaConfig/lib
+
+/dockerImages/*
+
+/gameFiles/openarena-0.8.8.zip
