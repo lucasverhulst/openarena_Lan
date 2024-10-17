@@ -1,6 +1,6 @@
 services:
   openarena:
-    image: "lucasverhulst/openarena"
+    image: "lucasverhulst/openarenalan"
     network_mode: host
     environment:
       OA_STARTMAP: "oa_dm1"

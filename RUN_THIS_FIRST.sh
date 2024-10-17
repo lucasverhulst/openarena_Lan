@@ -13,7 +13,7 @@ wget http://www.openarena.ws/request.php?4 -P ./gameFiles
 mv './gameFiles/request.php?4' ./gameFiles/openarena.zip
 
 mkdir dockerImages
-docker pull lucasverhulst/openarena:latest
+docker pull lucasverhulst/openarenalan:latest
 docker pull crazymax/samba:latest
 
 cd dockerImages
