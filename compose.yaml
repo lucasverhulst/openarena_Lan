@@ -1,10 +1,10 @@
 services:
   openarena:
-    image: "sago007/openarena"
-    ports:
-      - "27960:27960/udp"
+    image: "lucasverhulst/openarena"
+    network_mode: host
     environment:
       OA_STARTMAP: "oa_dm1"
+      OA_IP: "0.0.0.0"
       OA_PORT: "27690"
     volumes:
       - ./gameConfig:/data/openarena/baseoa
@@ -12,12 +12,16 @@ services:
 
   samba:
     image: "crazymax/samba:latest"
-    ports:
-      - "445:445/tcp"
+    hostname: "openarena"
+    network_mode: host
+    cap_add:
+      - CAP_NET_ADMIN
+      - CAP_NET_RAW
     environment:
       TZ: "Europe/Amsterdam"
       SAMBA_LOG_LEVEL: "0"
       SAMBA_HOSTS_ALLOW: ""
+      WSDD2_ENABLE: "1"
     volumes:
       - ./sambaConfig:/data
       - ./gameFiles:/samba/public

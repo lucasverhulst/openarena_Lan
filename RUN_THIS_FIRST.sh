@@ -10,9 +10,10 @@ echo "dont run this file again"
 # the rest of the commands to run on the first startup go here
 # download openarena zip and download docker backup
 wget http://www.openarena.ws/request.php?4 -P ./gameFiles
+mv './gameFiles/request.php?4' ./gameFiles/openarena.zip
 
 mkdir dockerImages
-docker pull sago007/openarena:latest
+docker pull lucasverhulst/openarena:latest
 docker pull crazymax/samba:latest
 
 cd dockerImages

@@ -3,6 +3,8 @@
 /sambaConfig/cache
 /sambaConfig/lib
 
-/dockerImages/*
+/dockerImages/*.tar
 
-/gameFiles/openarena-0.8.8.zip
+/gameFiles/
+
+/docker

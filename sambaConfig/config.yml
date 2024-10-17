@@ -2,6 +2,7 @@ share:
   - name: public
     path: /samba/public
     browsable: yes
+    writable: no
     readonly: yes
     guestok: yes
     veto: no
